@@ -1,0 +1,30 @@
+# SVDRP gem #
+
+SVDRP gem is a Simple VDR Protocol implementation for Ruby
+VDR (http://www.tvdr.de/)
+
+## Usage ##
+
+All functionality is contained in the SVDRP class. Creating an instance of this
+class is as simple as
+
+    require 'rubygems'
+    require 'svdrp'
+
+    svdrp = SVDRP.new 'vdr_host_name', 2001
+
+Once you have an instance of the VDR class, start by connecting to the server:
+
+    svdrp.connect
+
+When you are done, disconnect by calling disconnect
+
+    svdrp.disconnect
+
+Once connected, you can issue commands to talk to the server
+
+    svdrp.connect
+    svdrp.channel = 1
+    channel = svdrp.channel
+    puts "Current Channel: #{channel.number} #{channel.name}"
+
